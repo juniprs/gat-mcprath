@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
             <br/>
             {this.props.formType === "login" ? this.props.navLink : ''}
             <br/>
-            {}
+            <a href='/'>Return to Store</a>
           </div>
         </form>
       </div>
