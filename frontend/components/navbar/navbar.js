@@ -9,7 +9,7 @@ class Navbar extends React.Component {
 
                 </div>
                 <ul>
-                    {NavItems.map(item, i) => {
+                    {NavItems.map((item, i) => {
                         return (
                             <li>
                                 <a className={item.cName} href={item.url}>
@@ -17,7 +17,7 @@ class Navbar extends React.Component {
                                 </a>
                             </li>
                         )
-                    }}
+                    })}
                 </ul>
             </nav>
         )

@@ -1,3 +1,3 @@
 User.destroy_all
 
-bob = User.create!(email: 'bobbob', password: 'bobbob');
+demo = User.create!(email: 'demo@user.com', password: 'testing')
