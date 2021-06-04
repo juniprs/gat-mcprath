@@ -1,6 +1,5 @@
 import React from "react";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { FaSearch } from "react-icons/fa";
+import { VscSearch } from "react-icons/vsc";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsBag } from 'react-icons/bs';
 
@@ -24,11 +23,13 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar">
-          <h1 className="header"><a href="/#/">GAT McPRATH LABS</a></h1>
+        <h1 className="header">
+          <a href="/#/">GAT McPRATH LABS</a>
+        </h1>
         <ul className="navbar-items">
           <li className="search-icon" onMouseOver={this.handleSearchHover}>
             {this.state.searchhover ? "search-bar-here" : ""}
-            <FaSearch />
+            <VscSearch size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
           </li>
           <li>
             <a
@@ -36,7 +37,7 @@ class Navbar extends React.Component {
               href="/#/login"
               onMouseOver={this.handleAccountHover}
             >
-              <IoPersonOutline />
+              <IoPersonOutline size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
             <li className="dropdown-items">
               {this.state.accounthover ? (
@@ -55,7 +56,7 @@ class Navbar extends React.Component {
           </li>
           <li>
             <a className="cart-icon" href="#">
-              <BsBag />
+              <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
           </li>
         </ul>
