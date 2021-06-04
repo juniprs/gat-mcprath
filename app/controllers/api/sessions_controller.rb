@@ -7,19 +7,19 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render '/api/users/show'
         else
-            render json: { error: 'Invalid email/password. Please try again.'}, status: 401
+            render json: ['Invalid email/password. Please try again'], status: 401
         end
     end
 
     def destroy
-        logout
-        render plain: 'successfully logged out!'
-        # @user = current_user
-        # if @user
-        #     logout
-        #     render plain: 'successfully logged out!'
-        # else
-        #     render json: ['Error: nobody logged in!'], status: 404
-        # end
+        # logout
+        # render plain: 'successfully logged out!'
+        @user = current_user
+        if @user
+            logout
+            render plain: 'successfully logged out!'
+        else
+            render json: ['Error: nobody logged in!'], status: 404
+        end
     end
 end
