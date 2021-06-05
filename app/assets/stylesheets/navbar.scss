@@ -6,16 +6,14 @@
 
 .navbar {
     background: black;
-    color: white;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 70% 30%;
     height: 185px;
     padding-bottom: 1.5rem;
-    padding-left: 10rem;
+    padding-left: 5rem;
     padding-right: 5rem;
     border-bottom: 1px solid hsla(0, 0%, 90%, 0.75);
-    // font-family: inherit;
 }
 
 .header {
@@ -46,7 +44,7 @@
 .dropdown-items {
     background: black;
     // color: hsla(0, 0%, 90%, 0.50);
-    border-top: 1px solid white;
+    border-top: 1px solid hsla(0, 0%, 90%, 0.75);
     position: absolute;
     margin-top: 1.5rem;
     margin-bottom: 1rem;

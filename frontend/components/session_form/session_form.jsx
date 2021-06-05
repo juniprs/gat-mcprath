@@ -45,10 +45,10 @@ class SessionForm extends React.Component {
   render() {
       console.log('hi')
     return (
-        <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.formType === 'login' ? 'LOGIN' : 'CREATE ACCOUNT'}
-          <br/>
+      <div className='login-form-container'>
+        <form onSubmit={this.handleSubmit} className={this.props.formType === 'login' ? "login-form-box" : 'signup-form-box'}>
+          {this.props.formType === "login" ? "LOGIN" : "CREATE ACCOUNT"}
+          <br />
           {this.renderErrors()}
           <div className="login-form">
             <input
@@ -57,25 +57,35 @@ class SessionForm extends React.Component {
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
-              />
-            <br/>
+            />
             <input
               type="password"
               className="login-input"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
-              />
-            <br />
-            <button className="session-submit">{this.props.formType === 'login' ? 'SIGN IN' : 'CREATE'}</button>
-            <br/>
-            <br/>
-            {this.props.formType === "login" ? this.props.navLink : ''}
-            <br/>
-            <a href='/'>Return to Store</a>
+            />
+            {this.props.formType !== "login" ? (
+              <button className="session-submit">CREATE</button>
+              ) : (
+                ""
+                )}
+            {this.props.formType === "login" ? (
+              <div className="login-bttns">
+                <input type='submit' className="login-submit" value='SIGN IN'/>
+                <button className="demo-submit" onClick={this.demoUser}>
+                  DEMO
+                </button>
+              </div>
+            ) : (
+              ""
+              )}
+            <div className="session-links">
+              {this.props.formType === "login" ? this.props.navLink : ""}
+              <a href="/">Return to Store</a>
+            </div>
           </div>
-        </form>
-            {this.props.formType === "login" ? <button className="demo-submit" onClick={this.demoUser}>DEMO</button> : ''}
+          </form>
       </div>
     );
   }

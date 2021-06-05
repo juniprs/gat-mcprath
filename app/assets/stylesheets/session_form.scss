@@ -1,0 +1,121 @@
+.login-form-container {
+    border: 1px solid lightpink;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+    color: hsla(0, 0%, 90%, 0.75);
+    height: 74.5%;
+    font-size: 30px;
+    font-weight: 100;
+    padding-bottom: 80px;
+    padding-top: 20px;
+}
+
+.login-form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+    color: hsla(0, 0%, 90%, 0.75);
+    height: 85%;
+    font-size: 30px;
+    font-weight: 100;
+    padding-bottom: 2px;
+}
+
+.login-form {
+    height: 80%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-top: 50px;
+
+    a {
+        align-self: center;
+        font-size: 17px;
+        font-family: inherit;
+        letter-spacing: 1.6px;
+        color: hsla(0, 0%, 95%, 0.80);
+
+        &:hover {
+            color: hsla(0, 0%, 60%, 0.90);
+        }
+    }
+}
+
+.login-input {
+    height: 10%;
+    margin: 4px;
+    border-style: none;
+    
+    &:hover {
+        background: hsla(0, 0%, 95%, 0.99)
+    }
+    &::placeholder {
+        font-family: 'Rokkitt', serif;
+        font-weight: 100;
+        font-size: 20px;
+        color: hsla(0, 0%, 80%, 0.70);
+        letter-spacing: 1.2px;
+        padding-left: 0.6rem;
+
+    }
+}
+
+.session-submit {
+    height: 10%;
+    margin: 4px;
+    background: hsl(0, 0%, 10%);
+    font-family: inherit;
+    font-size: 15px;
+    letter-spacing: 0.7px;
+    color: hsla(0, 0%, 95%, 0.90);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: hsl(0, 0%, 17%);
+    }
+}
+
+.login-bttns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input, button {
+        height: 2.6rem;
+        width: 98%;
+        margin: 4px;
+        background: hsl(0, 0%, 10%);
+        font-family: inherit;
+        font-size: 15px;
+        letter-spacing: 0.7px;
+        color: hsla(0, 0%, 95%, 0.90);
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background: hsl(0, 0%, 17%);
+        }
+    }
+}
+
+.session-links {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
