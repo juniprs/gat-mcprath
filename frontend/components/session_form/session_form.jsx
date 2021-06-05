@@ -29,7 +29,6 @@ class SessionForm extends React.Component {
     // let errors = Array.from(this.props.errors)
     return (
       <ul>
-        {console.log(this.props.errors)}
         {this.props.errors.map((error, i) => {
           return (<li className="errors" key={`error-${i}`}>{error}</li>)
         })}
@@ -37,13 +36,13 @@ class SessionForm extends React.Component {
     );
   }
 
-  demoUser() {
+  demoUser(e) {
+    e.preventDefault();
     const demo = { email: 'demo@user.com', password: 'testing' };
     this.props.processForm(demo)
   };
 
   render() {
-      console.log('hi')
     return (
       <div className='login-form-container'>
         <form onSubmit={this.handleSubmit} className={this.props.formType === 'login' ? "login-form-box" : 'signup-form-box'}>

@@ -26,6 +26,11 @@ class Navbar extends React.Component {
         <h1 className="header">
           <a href="/#/">GAT McPRATH LABS</a>
         </h1>
+        <ul className="products-link">
+          <li>
+            <a href="/#/">PRODUCTS</a>
+          </li>
+        </ul>
         <ul className="navbar-items">
           <li className="search-icon" onMouseOver={this.handleSearchHover}>
             {this.state.searchhover ? "search-bar-here" : ""}
@@ -37,25 +42,34 @@ class Navbar extends React.Component {
               href="/#/login"
               onMouseOver={this.handleAccountHover}
             >
-              <IoPersonOutline size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
+              <IoPersonOutline
+                size={19}
+                color={"hsla(0, 0%, 90%, 0.60)"}
+              />
             </a>
             <li className="dropdown-items">
               {this.state.accounthover ? (
-                <ul>
-                  <li>
-                    <a href="/#/login">LOG IN</a>
-                  </li>
-                  <li>
-                    <a href="/#/register">CREATE ACCOUNT</a>
-                  </li>
-                </ul>
+                this.props.currentUser ? (
+                  <ul>
+                    <li onClick={this.props.logout}>LOG OUT</li>
+                  </ul>
+                ) : (
+                  <ul>
+                    <li>
+                      <a href="/#/login">LOG IN</a>
+                    </li>
+                    <li>
+                      <a href="/#/register">CREATE ACCOUNT</a>
+                    </li>
+                  </ul>
+                )
               ) : (
                 ""
               )}
             </li>
           </li>
           <li>
-            <a className="cart-icon" href="#">
+            <a className="cart-icon" href="/#/">
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
           </li>

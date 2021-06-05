@@ -1,5 +1,4 @@
 .login-form-container {
-    border: 1px solid lightpink;
     height: 55vh;
     display: flex;
     justify-content: center;
@@ -13,7 +12,7 @@
     align-items: center;
     width: 50vh;
     color: hsla(0, 0%, 90%, 0.75);
-    height: 74.5%;
+    height: 74.8%;
     font-size: 30px;
     font-weight: 100;
     padding-bottom: 80px;
@@ -27,10 +26,13 @@
     align-items: center;
     width: 50vh;
     color: hsla(0, 0%, 90%, 0.75);
-    height: 85%;
+    height: 74.8%;
     font-size: 30px;
     font-weight: 100;
+    margin-top: 20px;
     padding-bottom: 2px;
+
+
 }
 
 .login-form {
@@ -39,7 +41,7 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 90px;
 
     a {
         align-self: center;
@@ -87,6 +89,10 @@
     &:hover {
         background: hsl(0, 0%, 17%);
     }
+
+    &:active {
+        background: hsl(0, 0%, 36%);
+    }
 }
 
 .login-bttns {
@@ -110,6 +116,10 @@
         &:hover {
             background: hsl(0, 0%, 17%);
         }
+
+        &:active {
+            background: hsl(0, 0%, 36%);
+        }
     }
 }
 
@@ -118,4 +128,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.errors {
+    border: 1px solid hsla(3, 90%, 45%, 0.9);
+    background: hsl(337, 90%, 98.5%);
+    color: hsla(3, 90%, 45%, 0.9);
+    font-size: 14.8px; 
+    letter-spacing: 1.4px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
