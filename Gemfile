@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'activestorage'
 gem 'devise'
 gem 'devise_token_auth'
+gem 'aws-sdk-s3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
