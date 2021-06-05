@@ -88,6 +88,7 @@
 
     &:hover {
         background: hsl(0, 0%, 17%);
+        transition: 0.25s;
     }
 
     &:active {
@@ -115,6 +116,7 @@
 
         &:hover {
             background: hsl(0, 0%, 17%);
+            transition: 0.25s;
         }
 
         &:active {
