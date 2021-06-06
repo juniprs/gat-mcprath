@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { VscSearch } from "react-icons/vsc";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsBag } from 'react-icons/bs';
@@ -24,11 +25,11 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <h1 className="header">
-          <a href="/#/">GAT McPRATH LABS</a>
+          <Link to="/">GAT McPRATH LABS</Link>
         </h1>
         <ul className="products-link">
           <li>
-            <a href="/#/">PRODUCTS</a>
+            <Link to="/products">PRODUCTS</Link>
           </li>
         </ul>
         <ul className="navbar-items">

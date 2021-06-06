@@ -10,23 +10,26 @@ class SessionForm extends React.Component {
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoUser = this.demoUser.bind(this);
-  }
+  };
 
   update(field) {
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
       });
-  }
+  };
+
+  componentWillUnmount() {
+    this.props.clearErrors()
+  };
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-  }
+  };
 
   renderErrors() {
-    // let errors = Array.from(this.props.errors)
     return (
       <ul>
         {this.props.errors.map((error, i) => {
@@ -34,7 +37,7 @@ class SessionForm extends React.Component {
         })}
       </ul>
     );
-  }
+  };
 
   demoUser(e) {
     e.preventDefault();
@@ -87,7 +90,7 @@ class SessionForm extends React.Component {
           </form>
       </div>
     );
-  }
-}
+  };
+};
 
 export default SessionForm;
