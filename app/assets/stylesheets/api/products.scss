@@ -1,17 +1,77 @@
 .products-container {
-    .product-container, .product-price, a {
+    .product-container, .name-price-container, a, span {
         background: white;
         color: black;
     }
+    // border: solid red;
 }
 
 .product-photo {
     width: 325px;
     height: auto;
+    // border: solid blue;
 }
 
 .products-list {
-        display: grid;
-        grid-template-columns: repeat(3, 33.33%);
-        grid-auto-flow: row;
+    background: white;
+    padding-left: 21rem;
+    padding-right: 19rem;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-auto-flow: row;
+    // border: solid green;
+}
+
+.product-container {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    // border: solid orange;
+    width: 330px;
+    height: 460px;
+}
+
+.name-price-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-details {
+    display: flex;
+    // border: solid yellow;
+    height: 100%;
+    margin-top: 30px;
+    letter-spacing: 0.7px;
+    justify-content: space-between;
+
+    span{
+        padding-top: 12px;
     }
+    
+    .product-price {
+        font-weight: 500;
+    }
+
+    .product-bttn {
+        text-align: center;
+        align-self: flex-end;
+        border: none;
+        background: hsl(0, 0%, 12%);
+        color: white;
+        height: 23%;
+        width: 41%;
+        font-size: 12px;
+        font-weight: 400;
+        padding-top: 11px;
+        letter-spacing: 0.9px;
+
+        &:hover {
+            background: hsl(0, 0%, 24%);
+            transition: 0.25s;
+        }
+    }
+
+    .name-price-container {
+        // border: pink;
+    }
+}

@@ -5,32 +5,32 @@ demo = User.create!(email: 'demo@user.com', password: 'testing')
 
 products = Product.create!([
     {
-        'name': 'blush',
+        'name': 'BLUSH',
         'description': 'very pink',
         'price': 4
     },
     {
-        'name': 'eyeliner',
+        'name': 'EYELINER',
         'description': 'very black',
         'price': 6
     },
     {
-        'name': 'mascara',
+        'name': 'MASCARA',
         'description': 'very very black',
         'price': 9
     },
     {
-        'name': 'bronzer',
+        'name': 'BRONZER',
         'description': 'very tan',
         'price': 10
     },
     {
-        'name': 'brow gel',
+        'name': 'BROW GEL',
         'description': 'very clear',
         'price': 4
     },
     {
-        'name': 'lipstick',
+        'name': 'LIPSTICK',
         'description': 'very dark',
         'price': 13
     }
