@@ -6,8 +6,12 @@
 }
 
 .product-photo {
-    // width: 32vw;
-    // height: auto;
     width: 325px;
     height: auto;
 }
+
+.products-list {
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        grid-auto-flow: row;
+    }
