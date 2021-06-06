@@ -35,3 +35,9 @@ products = Product.create!([
         'price': 13
     }
 ])
+
+eye_photo = "/Users/xj9/Desktop/eye.jpg"
+
+Product.all.each do |product|
+    product.photo.attach(io: File.open(eye_photo), filename: "eye.jpg")
+end
