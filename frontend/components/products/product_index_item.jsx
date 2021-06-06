@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ProductIndexItem = props => (
-    <li>
-        <a href="#"><img src={props.product.photo}/></a>
-        <a href="#">{props.product.name}</a>
-        {props.product.price}
-        <a href="#"><button>SHOP NOW</button></a>
+    <li className='product-container'>
+        <a href="#" ><img src={props.product.photo} className='product-photo'/></a>
+        <a href="#" className='product-name'>{props.product.name}</a>
+        <span className='product-price'>${props.product.price}</span>
+        <a href="#" className='product-bttn'><button>SHOP NOW</button></a>
     </li>
 );
 

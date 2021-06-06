@@ -13,7 +13,7 @@ class ProductIndex extends React.Component {
     render() {
         return (
             <div className='products-container'>
-                <ul>
+                <ul className='products-list'>
                     {this.props.products.map((product, i) => {
                     return <ProductIndexItem product = {product} key = {i}/>
                     })}
