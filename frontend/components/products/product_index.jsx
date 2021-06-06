@@ -18,7 +18,6 @@ class ProductIndex extends React.Component {
                     return <ProductIndexItem product = {product} key = {i}/>
                     })}
                 </ul>
-                <Link to="/">BACK TO TOP</Link>
             </div>
         )
     };

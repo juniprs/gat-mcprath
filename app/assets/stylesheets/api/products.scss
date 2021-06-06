@@ -1,7 +1,7 @@
 .products-container {
     .product-container, .name-price-container, a, span {
         background: white;
-        color: black;
+        color: hsla(0, 0%, 3%, 95%)
     }
     // border: solid red;
 }
@@ -16,14 +16,17 @@
     background: white;
     padding-left: 21rem;
     padding-right: 19rem;
+    // width: 1800px;
     display: grid;
-    grid-template-columns: repeat(3, 33.33%);
+    // grid-template-columns: repeat(3, 33.33%)
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     grid-auto-flow: row;
     // border: solid green;
 }
 
 .product-container {
     margin: 1rem;
+    // padding: 1rem;
     display: flex;
     flex-direction: column;
     // border: solid orange;
@@ -57,7 +60,7 @@
         align-self: flex-end;
         border: none;
         background: hsl(0, 0%, 12%);
-        color: white;
+        color: hsla(0, 0%, 99%, 98%);
         height: 23%;
         width: 41%;
         font-size: 12px;
@@ -69,9 +72,5 @@
             background: hsl(0, 0%, 24%);
             transition: 0.25s;
         }
-    }
-
-    .name-price-container {
-        // border: pink;
     }
 }
