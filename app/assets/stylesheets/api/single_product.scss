@@ -1,0 +1,92 @@
+.single-product-wrapper {
+    background: white;
+    padding: 2em;
+    height: 50vh;
+    
+    .single-product-container {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        // border: solid green;
+    }
+}
+
+.photo {
+    // width: 600px;
+    width: 35rem;
+    height: auto;    
+    // margin-top: 3em;
+    // margin-left: 3.5em;
+    // border: solid pink;
+}
+
+.product-info-container {
+    width: 35%;
+    padding: 1.9em;
+    // border: solid blue;
+
+    .name {
+        font-size: 30px;
+        font-weight: 100;
+        transform: scale(0.98, 1);
+        margin-left: -0.3em;
+        margin-bottom: 25px;
+        margin-top: -0.4em;
+        color: hsla(0, 0%, 99%, 65%);
+        // border: solid yellow;
+    }
+
+    .price {
+        font-size: 18px;
+        font-weight: 400;
+        color: hsla(0, 0%, 99%, 65%);
+        letter-spacing: 4px;
+        margin-bottom: 45px;
+        // border: solid peachpuff;
+    }
+    
+    .colour {
+        font-size: 16px;
+        font-weight: 100;
+        letter-spacing: 2.3px;
+        color: hsla(0, 0%, 90%, 60%);
+        margin-bottom: 20px;
+        // border: solid tan;
+    }
+
+    .add-product-bttn {
+        display: inline-block;
+        text-align: center;
+        border: 1px solid whitesmoke;
+        background: hsl(0, 0%, 12%);
+        color: hsla(0, 0%, 99%, 99%);
+        height: 27px;
+        width: 205px;
+        font-size: 12.7px;
+        font-weight: 300;
+        padding-top: 15px;
+        letter-spacing: 0.99px;
+        margin-bottom: 20px;
+        
+        &:hover {
+            background: hsl(0, 0%, 24%);
+            transition: 0.25s;
+        }
+    }
+    
+    .description-bttn {
+        font-size: 13px;
+        font-weight: 300;
+        cursor: pointer;
+        
+        &::selection {
+           background: transparent;
+        }
+    }
+
+    .description {
+        padding-top: 10px;
+        letter-spacing: 1.5px;
+        color: hsla(0, 0%, 99%, 83%);
+    }
+}
