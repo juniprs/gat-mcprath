@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     Route,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -12,18 +13,23 @@ import SingleProductContainer from '../components/products/single_product_contai
 import Splash from '../components/splash';
 
 const App = () => (
-    <div>
-        <header>
-            <NavbarContainer />
-        </header>
-        <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer}/>
-            <AuthRoute exact path="/register" component={SignupFormContainer}/>
-            <Route exact path="/products/:productId" component={SingleProductContainer}/>
-            <Route exact path="/products" component={ProductIndexContainer}/>
-            <Route exact path="/" component={Splash}/>
-        </Switch>
-    </div>
+  <div>
+    <header>
+      <NavbarContainer />
+    </header>
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/register" component={SignupFormContainer} />
+      <Route
+        exact
+        path="/products/:productId"
+        component={SingleProductContainer}
+      />
+      <Route exact path="/products" component={ProductIndexContainer} />
+      <Route exact path="/" component={Splash} />
+      <Route render={() => <Redirect to={{ pathname: "" }} />} />
+    </Switch>
+  </div>
 );
 
 export default App;
