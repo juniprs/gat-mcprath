@@ -1,3 +1,5 @@
+require 'open-uri'
+
 User.destroy_all
 Product.destroy_all
 
@@ -78,10 +80,9 @@ products = Product.create!([
     }
 ])
 
-# eye_photo = "/Users/xj9/Desktop/eye.jpg"
-eye_photo = "https://gat-mcprath-dev.s3-us-west-1.amazonaws.com/1N4CjEUhKcE6eK1qnCjHBcnR"
+eye_photo = "https://gat-mcprath-dev.s3-us-west-1.amazonaws.com/eye.jpg"
 
 Product.all.each do |product|
-    product.photo.attach(io: File.open(eye_photo), filename: "eye.jpg")
+    product.photo.attach(io: open(eye_photo), filename: "eye.jpg")
     product.save!
 end
