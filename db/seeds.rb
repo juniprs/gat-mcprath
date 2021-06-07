@@ -78,8 +78,10 @@ products = Product.create!([
     }
 ])
 
-eye_photo = "/Users/xj9/Desktop/eye.jpg"
+# eye_photo = "/Users/xj9/Desktop/eye.jpg"
+eye_photo = "https://gat-mcprath-dev.s3-us-west-1.amazonaws.com/1N4CjEUhKcE6eK1qnCjHBcnR"
 
 Product.all.each do |product|
     product.photo.attach(io: File.open(eye_photo), filename: "eye.jpg")
+    product.save!
 end
