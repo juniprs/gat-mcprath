@@ -84,5 +84,4 @@ eye_photo = "https://gat-mcprath-dev.s3-us-west-1.amazonaws.com/eye.jpg"
 
 Product.all.each do |product|
     product.photo.attach(io: open(eye_photo), filename: "eye.jpg")
-    product.save!
 end
