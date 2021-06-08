@@ -24,7 +24,7 @@ class SingleProduct extends React.Component {
                 <div className="product-info-container">
                     <li className="name">{this.props.product.name}</li>
                     <li className="price">${this.props.product.price}</li>
-                    <li className="colour">Colour: {this.props.product.colour}</li>
+                    <li className="colour">{this.props.product.colour ? `Colour: ${this.props.product.colour}` : ''}</li>
                     <li>
                     <a href="#" className="add-product-bttn">ADD TO BAG</a>
                     </li>
