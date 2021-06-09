@@ -5,14 +5,26 @@
     height: 70vh;
 }
 
+
 .cart-header {
-    font-size: 29px;
-    font-weight: 100;
-    // border: solid yellow;
-    padding-top: 60px;
-    color: hsla(0, 0%, 99%, 70%);
-    transform: scale(0.88, 1);
-    letter-spacing: 0.9px;
-    height: 3.3rem;
-    border-bottom: 1px solid hsla(0, 0%, 99%, 20%);
+    // border: solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cart-header-name {
+        font-size: 29px;
+        font-weight: 100;
+        // border: solid yellow;
+        padding-top: 60px;
+        color: hsla(0, 0%, 99%, 70%);
+        transform: scale(0.88, 1);
+        letter-spacing: 0.9px;
+        height: 3.3rem;
+    }
+    
+    .border {
+        border-bottom: 1px solid hsla(0, 0%, 99%, 10%);
+        width: 3.3rem;
+    }
 }

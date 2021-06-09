@@ -12,7 +12,10 @@ class Cart extends React.Component {
     render() {
         return (
             <div className="cart">
-                <h1 className="cart-header">YOUR BAG</h1>
+                <div className="cart-header">
+                    <h1 className="cart-header-name">YOUR BAG</h1>
+                    <p className="border"/>
+                </div>
             </div>
         )
     };
