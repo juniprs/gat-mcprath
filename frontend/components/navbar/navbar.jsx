@@ -70,7 +70,7 @@ class Navbar extends React.Component {
             </li>
           </li>
           <li>
-            <a className="cart-icon" href="/#/">
+            <a className="cart-icon" href="/#/cart">
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
           </li>

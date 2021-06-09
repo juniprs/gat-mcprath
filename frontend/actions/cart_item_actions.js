@@ -23,13 +23,13 @@ export const createCartItem = cartItem => dispatch => {
 };
 
 export const updateCartItem = cartItem => dispatch => {
-    return CartItemApiUtil.fetchCartItem(cartItem)
-        .then(cartItem => dispatch(receiveCartItem(cartItem))
+    return CartItemApiUtil.updateCartItem(cartItem)
+        .then(cartItem => dispatch(updateCartItem(cartItem))
     )
 };
 
 export const deleteCartItem = cartItem => dispatch => {
     return CartItemApiUtil.postCartItem(cartItem)
-        .then(cartItem => dispatch(receiveCartItem(cartItem))
+        .then(cartItem => dispatch(removeCartItem(cartItem))
     )
 };
