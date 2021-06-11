@@ -28,8 +28,8 @@ export const updateCartItem = cartItem => dispatch => {
     )
 };
 
-export const deleteCartItem = cartItem => dispatch => {
-    return CartItemApiUtil.postCartItem(cartItem)
-        .then(cartItem => dispatch(removeCartItem(cartItem))
+export const deleteCartItem = cartItemId => dispatch => {
+    return CartItemApiUtil.deleteCartItem(cartItemId)
+        .then(() => dispatch(removeCartItem(cartItemId))
     )
 };

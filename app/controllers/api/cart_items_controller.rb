@@ -1,11 +1,11 @@
 class Api::CartItemsController < ApplicationController
     def create
         @cart = Cart.find(params[:cart_id])
-
-        @cart.add_item(
-            product_id: params[:product_id],
-            quantity: params[:quantity]
-        )
+        @item = CartItem.create(cart_item_params)
+        
+        if @item.save
+            # @cart_item
+        end
     end
 
     def update
