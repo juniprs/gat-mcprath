@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { VscSearch } from "react-icons/vsc";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsBag } from 'react-icons/bs';
+import Modal from '../modal/modal';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -70,7 +71,7 @@ class Navbar extends React.Component {
             </li>
           </li>
           <li>
-            <a className="cart-icon" href="/#/cart">
+            <a className="cart-icon" href="#">
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
           </li>

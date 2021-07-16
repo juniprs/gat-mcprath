@@ -1,37 +1,40 @@
-import React from 'react';
-import {
-    Route,
-    Switch,
-    Redirect
-} from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
-import SignupFormContainer from './session_form/signup_form_container';
-import LoginFormContainer from './session_form/login_form_container';
-import NavbarContainer from '../components/navbar/navbar_container';
-import ProductIndexContainer from '../components/products/product_index_container';
-import SingleProductContainer from '../components/products/single_product_container';
-import CartContainer from '../components/cart/cart_container';
-import Splash from '../components/splash';
+import React, { useState } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { AuthRoute } from "../util/route_util";
+import SignupFormContainer from "./session_form/signup_form_container";
+import LoginFormContainer from "./session_form/login_form_container";
+import NavbarContainer from "../components/navbar/navbar_container";
+import ProductIndexContainer from "../components/products/product_index_container";
+import SingleProductContainer from "../components/products/single_product_container";
+import CartContainer from "../components/cart/cart_container";
+import Splash from "../components/splash";
+import Modal from "../components/modal/modal";
 
-const App = () => (
-  <div>
-    <header>
-      <NavbarContainer />
-    </header>
-    <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/register" component={SignupFormContainer} />
-      <Route
-        exact
-        path="/products/:productId"
-        component={SingleProductContainer}
-      />
-      <Route exact path="/products" component={ProductIndexContainer} />
-      <Route exact path="/cart" component={CartContainer} />
-      <Route exact path="/" component={Splash} />
-      <Route render={() => <Redirect to={{ pathname: "" }} />} />
-    </Switch>
-  </div>
-);
+const App = () => {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div>
+      <header>
+        <NavbarContainer />
+      </header>
+      <button onClick={() => setShow(true)}>Show Modal</button>
+      <Modal onClose={() => setShow(false)} show={show} />
+      <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/register" component={SignupFormContainer} />
+        <Route
+          exact
+          path="/products/:productId"
+          component={SingleProductContainer}
+        />
+        <Route exact path="/products" component={ProductIndexContainer} />
+        <Route exact path="/cart" component={CartContainer} />
+        <Route exact path="/" component={Splash} />
+        <Route render={() => <Redirect to={{ pathname: "" }} />} />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
