@@ -12,7 +12,6 @@
   transition: all 0.2s ease-in-out;
   pointer-events: none;
 
-  outline: 1px solid pink;
 }
 
 .modal-wrapper.show {
@@ -22,13 +21,11 @@
 
 .modal-container {
   width: 340px;
-  height: 96%;
+  height: 95.5%;
   padding: 30px;
   background: hsl(0, 0%, 11%);
   transform: translateX(100px);
   transition: all 0.2s ease-in-out;
-
-  outline: 1px solid yellow;
 }
 
 .modal-wrapper.show .modal-container {
@@ -37,10 +34,14 @@
 
 .modal-header {
   background: hsl(0, 0%, 11%);
-  padding-bottom: 30px;
+  padding-bottom: 27px;
   font-size: 23px;
   word-spacing: 10px;
   border-bottom: 1px solid hsl(0, 0%, 20%);
+
+  :active {
+    color: hsla(0, 0%, 99%, 0.8);
+  }
 }
 
 .modal-title {
@@ -54,20 +55,27 @@
   color: hsla(0, 0%, 99%, 0.8);
   padding: 18px 0;
   font-size: 17px;
-  letter-spacing: 2px;
+  letter-spacing: 1.95px;
   word-spacing: 3px;
-  
-  // outline: 1px solid green;
+
+  :active {
+    color: hsla(0, 0%, 99%, 0.8);
+  }
 }
 
 .modal-close {
   background: hsl(0, 0%, 11%);
   color: hsla(0, 0%, 80%, 0.9);
   position: absolute;
-  top: 29.5px;
-  right: 47.75px;
+  top: 27px;
+  right: 47.51px;
 
   :hover {
     cursor: pointer;
+    color: hsla(0, 0%, 99%, 0.85);
   }
+
+  // :active {
+  //   color: hsla(0, 0%, 99%, 0.8);
+  // }
 }
