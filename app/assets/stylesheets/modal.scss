@@ -21,7 +21,7 @@
 }
 
 .modal-container {
-  width: 355px;
+  width: 340px;
   height: 96%;
   padding: 30px;
   background: hsl(0, 0%, 11%);
@@ -37,8 +37,10 @@
 
 .modal-header {
   background: hsl(0, 0%, 11%);
-  padding-bottom: 20px;
-  font-size: 22px;
+  padding-bottom: 30px;
+  font-size: 23px;
+  word-spacing: 10px;
+  border-bottom: 1px solid hsl(0, 0%, 20%);
 }
 
 .modal-title {
@@ -50,19 +52,20 @@
 .modal-body {
   background: hsl(0, 0%, 11%);
   color: hsla(0, 0%, 99%, 0.8);
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  font-size: 15px;
-  letter-spacing: 0.4px;
+  padding: 18px 0;
+  font-size: 17px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  
+  // outline: 1px solid green;
 }
 
 .modal-close {
   background: hsl(0, 0%, 11%);
-  color: hsla(0, 0%, 99%, 0.8);
+  color: hsla(0, 0%, 80%, 0.9);
   position: absolute;
-  top: 30px;
-  right: 35px;
+  top: 29.5px;
+  right: 47.75px;
 
   :hover {
     cursor: pointer;

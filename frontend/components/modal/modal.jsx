@@ -32,7 +32,7 @@ export default (props) => {
          */}
         <div className="modal-body">Your bag is currently empty.</div>
         <a onClick={props.onClose} className="modal-close">
-          <IoCloseOutline size={20} />
+          <IoCloseOutline size={21} />
         </a>
       </div>
     </div>
