@@ -1,26 +1,32 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { VscSearch } from "react-icons/vsc";
 import { IoPersonOutline } from "react-icons/io5";
-import { BsBag } from 'react-icons/bs';
-import Modal from '../modal/modal';
+import { BsBag } from "react-icons/bs";
+import Modal from "../modal/modal";
 
 class Navbar extends React.Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = { searchhover: false, accounthover: false }
-        this.handleSearchHover = this.handleSearchHover.bind(this);
-        this.handleAccountHover = this.handleAccountHover.bind(this);
-    }
+  constructor(props) {
+    super(props);
 
-    handleSearchHover = () => {
-        this.setState({ searchhover: !this.state.searchhover })
-    }
+    this.state = { searchhover: false, accounthover: false, show: false };
+    this.handleSearchHover = this.handleSearchHover.bind(this);
+    this.handleAccountHover = this.handleAccountHover.bind(this);
+    // this.openModal = this.openModal.bind(this);
+  }
 
-    handleAccountHover = () => {
-        this.setState({ accounthover: !this.state.accounthover })
-    }
+  handleSearchHover = () => {
+    this.setState({ searchhover: !this.state.searchhover });
+  };
+
+  handleAccountHover = () => {
+    this.setState({ accounthover: !this.state.accounthover });
+  };
+
+  // openModal = () => {
+  //   this.setState({ show: true });
+  //   console.log(this.state);
+  // };
 
   render() {
     return (
@@ -44,10 +50,7 @@ class Navbar extends React.Component {
               href="/#/login"
               onMouseOver={this.handleAccountHover}
             >
-              <IoPersonOutline
-                size={19}
-                color={"hsla(0, 0%, 90%, 0.60)"}
-              />
+              <IoPersonOutline size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
             <li className="dropdown-items">
               {this.state.accounthover ? (
@@ -71,9 +74,15 @@ class Navbar extends React.Component {
             </li>
           </li>
           <li>
-            <a className="cart-icon" href="#">
+            <a className="cart-icon" onClick={() => this.setState({ show: true })}>
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
+              <Modal show={this.state.show} onClose={() => this.setState({ show: false })}>
+                <p>This is modal bod</p>
+              </Modal>
+            {/* <a className="cart-icon" href="#">
+              <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
+            </a> */}
           </li>
         </ul>
       </nav>

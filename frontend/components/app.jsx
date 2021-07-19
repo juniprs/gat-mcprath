@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 import SignupFormContainer from "./session_form/signup_form_container";
@@ -8,18 +8,14 @@ import ProductIndexContainer from "../components/products/product_index_containe
 import SingleProductContainer from "../components/products/single_product_container";
 import CartContainer from "../components/cart/cart_container";
 import Splash from "../components/splash";
-import Modal from "../components/modal/modal";
+// import Modal from "../components/modal/modal";
 
 const App = () => {
-  const [show, setShow] = useState(false);
-
   return (
     <div>
       <header>
         <NavbarContainer />
       </header>
-      <button onClick={() => setShow(true)}>Show Modal</button>
-      <Modal onClose={() => setShow(false)} show={show} />
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/register" component={SignupFormContainer} />
