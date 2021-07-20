@@ -33,7 +33,6 @@
 }
 
 .modal-header {
-  background: hsl(0, 0%, 11%);
   padding-bottom: 27px;
   font-size: 23px;
   word-spacing: 10px;
@@ -45,13 +44,11 @@
 }
 
 .modal-title {
-  background: hsl(0, 0%, 11%);
   color: hsla(0, 0%, 99%, 0.8);
   margin: 0;
 }
 
 .modal-body {
-  background: hsl(0, 0%, 11%);
   color: hsla(0, 0%, 99%, 0.8);
   padding: 18px 0;
   font-size: 17px;
@@ -64,7 +61,6 @@
 }
 
 .modal-close {
-  background: hsl(0, 0%, 11%);
   color: hsla(0, 0%, 80%, 0.9);
   position: absolute;
   top: 27px;
@@ -75,7 +71,7 @@
     color: hsla(0, 0%, 99%, 0.85);
   }
 
-  // :active {
-  //   color: hsla(0, 0%, 99%, 0.8);
-  // }
+  :active {
+    color: hsla(0, 0%, 99%, 0.8);
+  }
 }

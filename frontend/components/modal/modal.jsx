@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { connect } from 'react-redux';
-import { fetchCart } from '../../actions/cart_actions';
-import { updateCartItem, deleteCartItem } from '../../actions/cart_item_actions';
-import { fetchProducts } from '../../actions/product_actions';
+import { connect } from "react-redux";
+import { fetchCart } from "../../actions/cart_actions";
+import {
+  updateCartItem,
+  deleteCartItem,
+} from "../../actions/cart_item_actions";
+import { fetchProducts } from "../../actions/product_actions";
+import Cart from "../cart/cart_container";
 
 const Modal = (props) => {
   const closeOnEscape = (e) => {
@@ -30,7 +34,11 @@ const Modal = (props) => {
         </div>
         {/* <div className="modal-body">{props.children}</div>
          */}
-        <div className="modal-body">Your bag is currently empty.</div>
+        {/* <div className="modal-body">Your bag is currently empty.</div>
+         */}
+        <div className="modal-body">
+          <Cart />
+        </div>
         <a onClick={props.onClose} className="modal-close">
           <IoCloseOutline size={21} />
         </a>
@@ -39,20 +47,20 @@ const Modal = (props) => {
   );
 };
 
-const mSTP = state => {
-    return {
-        cart: Object.values(state.entities.cart),
-        products: state.entities.products
-    }
+const mSTP = (state) => {
+  return {
+    cart: Object.values(state.entities.cart),
+    products: state.entities.products,
+  };
 };
 
-const mDTP = dispatch => {
-    return {
-        fetchCart: () => dispatch(fetchCart()),
-        fetchProducts: () => dispatch(fetchProducts()),
-        updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
-        deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId))
-    }
+const mDTP = (dispatch) => {
+  return {
+    fetchCart: () => dispatch(fetchCart()),
+    fetchProducts: () => dispatch(fetchProducts()),
+    updateCartItem: (cartItem) => dispatch(updateCartItem(cartItem)),
+    deleteCartItem: (cartItemId) => dispatch(deleteCartItem(cartItemId)),
+  };
 };
 
 export default connect(mSTP, mDTP)(Modal);
