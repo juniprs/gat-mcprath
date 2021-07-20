@@ -1,10 +1,12 @@
 class Api::CartItemsController < ApplicationController
     def create
-        @cart = Cart.find(params[:cart_id])
+        @cart = Cart.find_by(id: params[:cart_item][:cart_id])
         @item = CartItem.create(cart_item_params)
+        p @cart
         
-        if @item.save
-            # @cart_item
+        if @item.save!
+            render 'api/carts/show'
+            # render json: @cart
         end
     end
 

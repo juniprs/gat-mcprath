@@ -6,7 +6,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import NavbarContainer from "../components/navbar/navbar_container";
 import ProductIndexContainer from "../components/products/product_index_container";
 import SingleProductContainer from "../components/products/single_product_container";
-import CartContainer from "../components/cart/cart_container";
+// import CartContainer from "../components/cart/cart_container";
 import Splash from "../components/splash";
 // import Modal from "../components/modal/modal";
 
@@ -25,7 +25,7 @@ const App = () => {
           component={SingleProductContainer}
         />
         <Route exact path="/products" component={ProductIndexContainer} />
-        <Route exact path="/cart" component={CartContainer} />
+        {/* <Route exact path="/cart" component={CartContainer} /> */}
         <Route exact path="/" component={Splash} />
         <Route render={() => <Redirect to={{ pathname: "" }} />} />
       </Switch>
