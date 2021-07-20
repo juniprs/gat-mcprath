@@ -21,15 +21,25 @@ class Cart extends React.Component {
             return (
               <ul className="cart-item-container">
                 <li>
-                  <img src={this.props.products[cartItem.product_id].photo} />
+                  <img
+                    className="ci-photo"
+                    src={this.props.products[cartItem.product_id].photo}
+                  />
                 </li>
-                <li>{this.props.products[cartItem.product_id].name}</li>
-                <li>{this.props.products[cartItem.product_id].colour}</li>
-                <li>{cartItem.quantity}</li>
-                <li>
+                <li className="ci-name">
+                  {this.props.products[cartItem.product_id].name}
+                </li>
+                <li className="ci-colour">
+                  {this.props.products[
+                    cartItem.product_id
+                  ].colour.toLowerCase()}
+                </li>
+                <li className="ci-quantity">{cartItem.quantity}</li>
+                <li className="ci-price">
                   $
                   {this.props.products[cartItem.product_id].price *
                     cartItem.quantity}
+                  .00
                 </li>
               </ul>
             );

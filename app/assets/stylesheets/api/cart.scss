@@ -1,0 +1,33 @@
+.cart-wrapper {
+//   outline: 1px solid pink;
+}
+
+.cart-items-wrapper {
+//   outline: 1px solid yellow;
+}
+
+.cart-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid hsl(0, 0%, 20%);
+  padding: 33px 0;
+
+  .ci-photo {
+    width: 21%;
+    align-self: flex-start;
+  }
+
+  .ci-colour {
+      text-transform: capitalize;
+  }
+
+  .ci-price {
+      align-self: flex-end;
+    text-align: right;
+  }
+}
+
+.cart-footer {
+  outline: 1px solid green;
+}
