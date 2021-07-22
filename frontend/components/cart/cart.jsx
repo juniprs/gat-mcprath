@@ -14,6 +14,7 @@ class Cart extends React.Component {
     if (!Object.values(this.props.products).length) {
       return null;
     }
+    let total = 0;
     return (
       <div className="cart-wrapper">
         <div className="cart-items-wrapper">
@@ -46,7 +47,15 @@ class Cart extends React.Component {
           })}
         </div>
         <div className="cart-footer">
-          <span className="cart-total">TOTAL</span>
+          <ul className="cart-total">
+            <li>TOTAL</li>
+            {this.props.cart.forEach((cartItem) => {
+              total +=
+                this.props.products[cartItem.product_id].price *
+                cartItem.quantity;
+            })}
+            <li>${total}.00</li>
+          </ul>
           {/* <a href="#" className="update-bag-bttn">UPDATE BAG</a> */}
           <a href="#" className="check-out-bttn">
             CHECK OUT
