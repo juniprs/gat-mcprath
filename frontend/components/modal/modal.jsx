@@ -31,6 +31,9 @@ const Modal = (props) => {
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h1 className="modal-title">YOUR BAG</h1>
+          <a onClick={props.onClose} className="modal-close">
+            <IoCloseOutline size={25} />
+          </a>
         </div>
         {/* <div className="modal-body">{props.children}</div>
          */}
@@ -39,9 +42,6 @@ const Modal = (props) => {
         <div className="modal-body">
           <Cart />
         </div>
-        <a onClick={props.onClose} className="modal-close">
-          <IoCloseOutline size={21} />
-        </a>
       </div>
     </div>
   );
