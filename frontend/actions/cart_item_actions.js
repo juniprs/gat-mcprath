@@ -24,7 +24,7 @@ export const createCartItem = cartItem => dispatch => {
 
 export const updateCartItem = cartItem => dispatch => {
     return CartItemApiUtil.updateCartItem(cartItem)
-        .then(cartItem => dispatch(updateCartItem(cartItem))
+        .then(cartItem => dispatch(receiveCartItem(cartItem))
     )
 };
 

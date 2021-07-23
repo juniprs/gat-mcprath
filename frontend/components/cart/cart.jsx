@@ -3,11 +3,24 @@ import React from "react";
 class Cart extends React.Component {
   constructor(props) {
     super(props);
+    this.handleQuantityChange = this.handleQuantityChange.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchCart();
     this.props.fetchProducts();
+  }
+
+  handleQuantityChange(p, cartItem) {
+    if (p === "-") {
+      cartItem["quantity"]--;
+    } else {
+      cartItem["quantity"]++;
+    }
+    return (e) => {
+      e.preventDefault();
+      this.props.updateCartItem(cartItem);
+    };
   }
 
   render() {
@@ -35,7 +48,15 @@ class Cart extends React.Component {
                     cartItem.product_id
                   ].colour.toLowerCase()}
                 </li>
-                <li className="ci-quantity">{cartItem.quantity}</li>
+                <li className="ci-quantity">
+                  <button onClick={this.handleQuantityChange("-", cartItem)}>
+                    -
+                  </button>
+                  {cartItem.quantity}
+                  <button onClick={this.handleQuantityChange("+", cartItem)}>
+                    +
+                  </button>
+                </li>
                 <li className="ci-price">
                   $
                   {this.props.products[cartItem.product_id].price *
