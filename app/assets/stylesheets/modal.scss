@@ -27,8 +27,8 @@
   background: hsl(0, 0%, 11%);
   transform: translateX(100px);
   transition: all 0.2s ease-in-out;
-
-   :active {
+  
+  :active {
     color: hsla(0, 0%, 99%, 0.8);
   }
 }
