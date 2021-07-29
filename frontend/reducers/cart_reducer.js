@@ -1,5 +1,5 @@
 import { RECEIVE_CART } from "../actions/cart_actions";
-import { RECEIVE_CART_ITEM } from "../actions/cart_item_actions";
+import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from "../actions/cart_item_actions";
 
 const cartReducer = (state = {}, action) => {
   console.log('action:', action)
@@ -12,6 +12,9 @@ const cartReducer = (state = {}, action) => {
       newState[Object.keys(action.cartItem)[0]] = Object.values(
         action.cartItem
       )[0];
+      return newState;
+    case REMOVE_CART_ITEM:
+      delete newState[action.cartItemId]
       return newState;
     default:
       return state;

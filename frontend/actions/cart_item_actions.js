@@ -9,10 +9,10 @@ const receiveCartItem = cartItem => {
     }
 };
 
-const removeCartItem = productId => {
+const removeCartItem = cartItemId => {
     return {
         type: REMOVE_CART_ITEM,
-        productId
+        cartItemId
     }
 };
 
