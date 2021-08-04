@@ -15,6 +15,8 @@ class SingleProduct extends React.Component {
         this.setState({ isOpen: !this.state.isOpen });
     };
 
+    
+
     render() {
         return (
           <div className="single-product-wrapper">
@@ -22,23 +24,41 @@ class SingleProduct extends React.Component {
               <ul className="single-product-container">
                 <img src={this.props.product.photo} className="photo" />
                 <div className="product-info-container">
-                    <li className="name">{this.props.product.name}</li>
-                    <li className="price">${this.props.product.price}</li>
-                    <li className="colour">{this.props.product.colour ? `Colour: ${this.props.product.colour}` : ''}</li>
-                    <li>
-                    <a onClick={() => this.props.createCartItem({ 
-                      product_id: this.props.product.id
-                     })} className="add-product-bttn">ADD TO BAG</a>
-                    </li>
-                    <hr/>
-                    <a onClick={this.toggle} className="description-bttn">
-                    DESCRIPTION {this.state.isOpen ? <IoMdArrowDropdown size={20} /> : <IoMdArrowDropright size={20} />}
+                  <li className="name">{this.props.product.name}</li>
+                  <li className="price">${this.props.product.price}</li>
+                  <li className="colour">
+                    {this.props.product.colour
+                      ? `Colour: ${this.props.product.colour}`
+                      : ""}
+                  </li>
+                  <li>
+                    <a
+                      onClick={() =>
+                        this.props.createCartItem({
+                          product_id: this.props.product.id,
+                        })
+                      }
+                      className="add-product-bttn"
+                    >
+                      ADD TO BAG
                     </a>
+                  </li>
+                  <hr />
+                  <a onClick={this.toggle} className="description-bttn">
+                    DESCRIPTION{" "}
                     {this.state.isOpen ? (
-                    <p className="description">{this.props.product.description}</p>
+                      <IoMdArrowDropdown size={20} />
                     ) : (
-                    ""
+                      <IoMdArrowDropright size={20} />
                     )}
+                  </a>
+                  {this.state.isOpen ? (
+                    <p className="description">
+                      {this.props.product.description}
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </ul>
             ) : (

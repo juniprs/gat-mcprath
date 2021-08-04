@@ -34,6 +34,8 @@ class Cart extends React.Component {
       <div className="cart-wrapper">
         <div className="cart-items-wrapper">
           {this.props.cart.map((cartItem, i) => {
+            console.log(this.props.products);
+            console.log(cartItem);
             return (
               <ul className="cart-item-container">
                 <li>
@@ -48,14 +50,22 @@ class Cart extends React.Component {
                 <li className="ci-colour">
                   {this.props.products[
                     cartItem.product_id
-                  ].colour.toLowerCase()}
+                  ].colour ? this.props.products[
+                    cartItem.product_id
+                  ].colour.toLowerCase() : ""}
                 </li>
                 <li className="ci-quantity">
-                  <button onClick={this.handleQuantityChange("-", cartItem)} className="qty-bttn">
+                  <button
+                    onClick={this.handleQuantityChange("-", cartItem)}
+                    className="qty-bttn"
+                  >
                     -
                   </button>
                   {cartItem.quantity}
-                  <button onClick={this.handleQuantityChange("+", cartItem)} className="qty-bttn">
+                  <button
+                    onClick={this.handleQuantityChange("+", cartItem)}
+                    className="qty-bttn"
+                  >
                     +
                   </button>
                 </li>

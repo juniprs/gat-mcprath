@@ -7,7 +7,7 @@ import {
   deleteCartItem,
 } from "../../actions/cart_item_actions";
 import { fetchProducts } from "../../actions/product_actions";
-import Cart from "../cart/cart_container";
+import CartContainer from "../cart/cart_container";
 
 const Modal = (props) => {
   const closeOnEscape = (e) => {
@@ -40,7 +40,7 @@ const Modal = (props) => {
         {/* <div className="modal-body">Your bag is currently empty.</div>
          */}
         <div className="modal-body">
-          <Cart />
+          <CartContainer />
         </div>
       </div>
     </div>
