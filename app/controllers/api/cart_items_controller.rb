@@ -1,10 +1,11 @@
 class Api::CartItemsController < ApplicationController
     def create
-        @cart = Cart.find_by(id: params[:cart_item][:cart_id])
-        @item = CartItem.create(cart_item_params)
+        @cart_id = current_user.cart.id
+        @item = CartItem.create(cart_id: @cart_id, quantity: 1, product_id: params[:cartItem][:product_id])
         
+
         if @item.save!
-            render 'api/carts/show'
+            render 'api/cart_items/show'
         end
     end
 
@@ -25,6 +26,6 @@ class Api::CartItemsController < ApplicationController
     private
 
     def cart_item_params
-        params.require(:cart_item).permit(:cart_id, :product_id, :quantity)
+        params.require(:cart_item).permit(:product_id, :quantity)
     end
 end

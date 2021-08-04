@@ -26,7 +26,9 @@ class SingleProduct extends React.Component {
                     <li className="price">${this.props.product.price}</li>
                     <li className="colour">{this.props.product.colour ? `Colour: ${this.props.product.colour}` : ''}</li>
                     <li>
-                    <a href="#" className="add-product-bttn">ADD TO BAG</a>
+                    <a onClick={() => this.props.createCartItem({ 
+                      product_id: this.props.product.id
+                     })} className="add-product-bttn">ADD TO BAG</a>
                     </li>
                     <hr/>
                     <a onClick={this.toggle} className="description-bttn">

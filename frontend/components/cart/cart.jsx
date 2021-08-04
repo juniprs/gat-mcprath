@@ -51,11 +51,11 @@ class Cart extends React.Component {
                   ].colour.toLowerCase()}
                 </li>
                 <li className="ci-quantity">
-                  <button onClick={this.handleQuantityChange("-", cartItem)}>
+                  <button onClick={this.handleQuantityChange("-", cartItem)} className="qty-bttn">
                     -
                   </button>
                   {cartItem.quantity}
-                  <button onClick={this.handleQuantityChange("+", cartItem)}>
+                  <button onClick={this.handleQuantityChange("+", cartItem)} className="qty-bttn">
                     +
                   </button>
                 </li>
@@ -79,7 +79,6 @@ class Cart extends React.Component {
             })}
             <li>${total}.00</li>
           </ul>
-          {/* <a href="#" className="update-bag-bttn">UPDATE BAG</a> */}
           <a href="#" className="check-out-bttn">
             CHECK OUT
           </a>

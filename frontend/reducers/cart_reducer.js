@@ -9,10 +9,7 @@ const cartReducer = (state = {}, action) => {
     case RECEIVE_CART:
       return action.cart;
     case RECEIVE_CART_ITEM:
-      newState[Object.keys(action.cartItem)[0]] = Object.values(
-        action.cartItem
-      )[0];
-      return newState;
+      return Object.assign(newState, action.cartItem);
     case REMOVE_CART_ITEM:
       delete newState[action.cartItemId]
       return newState;
