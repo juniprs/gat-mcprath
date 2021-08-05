@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { connect } from "react-redux";
 import { fetchCart } from "../../actions/cart_actions";
@@ -23,26 +23,32 @@ const Modal = (props) => {
     };
   }, []);
 
+  const [showCheckout, setCheckout] = useState(false);
+
   return (
     <div
       className={`modal-wrapper ${props.show ? "show" : ""}`}
       onClick={props.onClose}
     >
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <h1 className="modal-title">YOUR BAG</h1>
-          <a onClick={props.onClose} className="modal-close">
-            <IoCloseOutline size={25} />
-          </a>
+      {showCheckout ? (
+        <div>Thank you for shopping at Gat McPrath! ♥</div>
+      ) : (
+        <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <h1 className="modal-title">YOUR BAG</h1>
+            <a onClick={props.onClose} className="modal-close">
+              <IoCloseOutline size={25} />
+            </a>
+          </div>
+          <div className="modal-body">
+            {props.cart.length ? (
+              <CartContainer />
+            ) : (
+              <div className="empty-cart">Your bag is currently empty.</div>
+            )}
+          </div>
         </div>
-        {/* <div className="modal-body">{props.children}</div>
-         */}
-        {/* <div className="modal-body">Your bag is currently empty.</div>
-         */}
-        <div className="modal-body">
-          {props.cart.length ? <CartContainer /> : <div className="empty-cart">Your bag is currently empty.</div>}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

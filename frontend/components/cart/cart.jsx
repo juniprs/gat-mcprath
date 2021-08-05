@@ -3,7 +3,11 @@ import React from "react";
 class Cart extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showCheckout: false,
+    };
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
   }
 
   componentDidMount() {
@@ -14,15 +18,21 @@ class Cart extends React.Component {
   handleQuantityChange(p, cartItem) {
     return (e) => {
       e.preventDefault();
-      if (p === '-' && cartItem["quantity"] > 1) {
+      if (p === "-" && cartItem["quantity"] > 1) {
         cartItem["quantity"] -= 1;
-      } else if (p === '-' && cartItem["quantity"] === 1) {
-        this.props.deleteCartItem(cartItem["id"])
+      } else if (p === "-" && cartItem["quantity"] === 1) {
+        this.props.deleteCartItem(cartItem["id"]);
       } else {
         cartItem["quantity"] += 1;
       }
       this.props.updateCartItem(cartItem);
     };
+  }
+
+  handleCheckout() {
+    this.setState({
+      showCheckout: true,
+    });
   }
 
   render() {
@@ -34,8 +44,6 @@ class Cart extends React.Component {
       <div className="cart-wrapper">
         <div className="cart-items-wrapper">
           {this.props.cart.map((cartItem, i) => {
-            console.log(this.props.products);
-            console.log(cartItem);
             return (
               <ul className="cart-item-container">
                 <li>
@@ -48,11 +56,11 @@ class Cart extends React.Component {
                   {this.props.products[cartItem.product_id].name}
                 </li>
                 <li className="ci-colour">
-                  {this.props.products[
-                    cartItem.product_id
-                  ].colour ? this.props.products[
-                    cartItem.product_id
-                  ].colour.toLowerCase() : ""}
+                  {this.props.products[cartItem.product_id].colour
+                    ? this.props.products[
+                        cartItem.product_id
+                      ].colour.toLowerCase()
+                    : ""}
                 </li>
                 <li className="ci-quantity">
                   <button
@@ -89,9 +97,14 @@ class Cart extends React.Component {
             })}
             <li>${total}.00</li>
           </ul>
-          <a href="#" className="check-out-bttn">
+          <a onClick={this.handleCheckout} className="check-out-bttn">
             CHECK OUT
           </a>
+          {/* {this.state.showCheckout ? (
+            <div>Thank you for shopping at Gat McPrath! ♥</div>
+          ) : (
+            ""
+          )} */}
         </div>
       </div>
     );
