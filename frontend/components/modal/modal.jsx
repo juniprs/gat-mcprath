@@ -40,7 +40,7 @@ const Modal = (props) => {
         {/* <div className="modal-body">Your bag is currently empty.</div>
          */}
         <div className="modal-body">
-          <CartContainer />
+          {props.cart.length ? <CartContainer /> : <div className="empty-cart">Your bag is currently empty.</div>}
         </div>
       </div>
     </div>

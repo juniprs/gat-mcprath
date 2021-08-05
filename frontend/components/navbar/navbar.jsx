@@ -77,9 +77,7 @@ class Navbar extends React.Component {
             <a className="cart-icon" onClick={() => this.setState({ show: true })}>
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
-              <Modal show={this.state.show} onClose={() => this.setState({ show: false })}>
-                <p>This is modal bod</p>
-              </Modal>
+              <Modal show={this.state.show} onClose={() => this.setState({ show: false })} />
             {/* <a className="cart-icon" href="#">
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a> */}

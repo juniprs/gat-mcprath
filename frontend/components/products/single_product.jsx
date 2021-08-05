@@ -65,9 +65,7 @@ class SingleProduct extends React.Component {
         <Modal
           show={this.state.show}
           onClose={() => this.setState({ show: false })}
-        >
-          <p>This is modal bod</p>
-        </Modal>
+        />
       </div>
     );
   }
