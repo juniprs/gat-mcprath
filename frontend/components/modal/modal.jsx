@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { connect } from "react-redux";
 import { fetchCart } from "../../actions/cart_actions";
@@ -23,15 +23,13 @@ const Modal = (props) => {
     };
   }, []);
 
-  const [showCheckout, setCheckout] = useState(false);
-
   return (
     <div
       className={`modal-wrapper ${props.show ? "show" : ""}`}
       onClick={props.onClose}
     >
-      {showCheckout ? (
-        <div>Thank you for shopping at Gat McPrath! ♥</div>
+      {props.showCheckout ? (
+        <div className="checkout-cart">Thank you for shopping at Gat McPrath ♥</div>
       ) : (
         <div className="modal-container" onClick={(e) => e.stopPropagation()}>
           <div className="modal-header">
