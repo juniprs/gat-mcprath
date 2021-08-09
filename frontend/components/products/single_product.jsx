@@ -18,9 +18,13 @@ class SingleProduct extends React.Component {
   };
 
   addToCart = () => {
+    // if (Object.values(this.props.cart)[product_id] === this.props.product.id) {
+    //   Object.values(this.props.cart)[product_id] += 1;
+    // } else {
     this.props.createCartItem({
       product_id: this.props.product.id,
     });
+    // }
     this.setState({ show: true });
   };
 

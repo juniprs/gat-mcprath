@@ -35,10 +35,6 @@ const Modal = (props) => {
             <IoCloseOutline size={25} />
           </a>
         </div>
-        {/* <div className="modal-body">{props.children}</div>
-         */}
-        {/* <div className="modal-body">Your bag is currently empty.</div>
-         */}
         <div className="modal-body">
           {props.cart.length ? <CartContainer /> : <div className="empty-cart">Your bag is currently empty.</div>}
         </div>
