@@ -9,7 +9,7 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { searchhover: false, accounthover: false, show: false, showCheckout: false };
+    this.state = { searchhover: false, accounthover: false, show: false };
     this.handleSearchHover = this.handleSearchHover.bind(this);
     this.handleAccountHover = this.handleAccountHover.bind(this);
     // this.openModal = this.openModal.bind(this);
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
         </ul>
         <ul className="navbar-items">
           <li className="search-icon" onMouseOver={this.handleSearchHover}>
-            {this.state.searchhover ? "sb" : ""}
+            {this.state.searchhover ? "search-bar" : ""}
             <VscSearch size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
           </li>
           <li>
@@ -77,7 +77,7 @@ class Navbar extends React.Component {
             <a className="cart-icon" onClick={() => this.setState({ show: true })}>
               <BsBag size={19} color={"hsla(0, 0%, 90%, 0.60)"} />
             </a>
-              <Modal show={this.state.show} showCheckout={this.state.showCheckout} onClose={() => this.setState({ show: false, showCheckout: false })} />
+              <Modal onClose={() => this.setState({ show: false })} />
           </li>
         </ul>
       </nav>
