@@ -17,7 +17,7 @@ class Cart extends React.Component {
       if (p === '-' && cartItem["quantity"] > 1) {
         cartItem["quantity"] -= 1;
       } else if (p === '-' && cartItem["quantity"] === 1) {
-        this.props.deleteCartItem(cartItem["id"])
+        this.props.deleteCartItem(cartItem["id"]);
       } else {
         cartItem["quantity"] += 1;
       }
