@@ -13,7 +13,7 @@ const Modal = (props) => {
   const closeOnEscape = (e) => {
     if ((e.charCode || e.keyCode) === 27) {
       props.onClose();
-    }
+    };
   };
 
   useEffect(() => {
@@ -28,13 +28,6 @@ const Modal = (props) => {
       className={`modal-wrapper ${props.show ? "show" : ""}`}
       onClick={props.onClose}
     >
-<<<<<<< HEAD
-      {/* <div className="checkout-cart">
-        Thank you for shopping at Gat McPrath ♥
-      </div> */}
-
-=======
->>>>>>> parent of 6a4985d (Account for modal change on checkout)
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h1 className="modal-title">YOUR BAG</h1>
@@ -42,24 +35,12 @@ const Modal = (props) => {
             <IoCloseOutline size={25} />
           </a>
         </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         <div className="modal-body">
           {props.cart.length ? (
             <CartContainer />
           ) : (
             <div className="empty-cart">Your bag is currently empty.</div>
           )}
-=======
-        {/* <div className="modal-body">{props.children}</div>
-         */}
-        {/* <div className="modal-body">Your bag is currently empty.</div>
-         */}
->>>>>>> 4a49978fff16368e1e8797b240d49a2391a2b94e
-        <div className="modal-body">
-          {props.cart.length ? <CartContainer /> : <div className="empty-cart">Your bag is currently empty.</div>}
->>>>>>> parent of 6a4985d (Account for modal change on checkout)
         </div>
       </div>
     </div>
