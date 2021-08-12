@@ -82,7 +82,7 @@ class Navbar extends React.Component {
         </ul>
       </nav>
     );
-  }
+  };
 }
 
 export default Navbar;
