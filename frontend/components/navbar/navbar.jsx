@@ -13,7 +13,7 @@ class Navbar extends React.Component {
     this.handleSearchHover = this.handleSearchHover.bind(this);
     this.handleAccountHover = this.handleAccountHover.bind(this);
     // this.openModal = this.openModal.bind(this);
-  }
+  };
 
   handleSearchHover = () => {
     this.setState({ searchhover: !this.state.searchhover });

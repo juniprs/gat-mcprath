@@ -7,11 +7,11 @@ class SingleProduct extends React.Component {
     super(props);
     this.state = { isOpen: false, show: false };
     this.addToCart = this.addToCart.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
-  }
+  };
 
   toggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
