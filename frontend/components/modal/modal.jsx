@@ -44,7 +44,7 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 const mSTP = (state) => {
