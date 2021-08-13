@@ -72,7 +72,7 @@ class SingleProduct extends React.Component {
         />
       </div>
     );
-  }
-}
+  };
+};
 
 export default SingleProduct;
