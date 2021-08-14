@@ -3,6 +3,8 @@ import React from "react";
 // import GMvideo from "../../public/gm-video1.mp4";
 
 const Splash = () => (
+    <div className="splash-wrapper">
+    </div>
   <div>
     {/* <iframe
       src="https://player.vimeo.com/video/569668508?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1"

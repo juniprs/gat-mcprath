@@ -9,10 +9,10 @@ const receiveCartItem = cartItem => {
     }
 };
 
-const removeCartItem = productId => {
+const removeCartItem = cartItemId => {
     return {
         type: REMOVE_CART_ITEM,
-        productId
+        cartItemId
     }
 };
 
@@ -24,7 +24,7 @@ export const createCartItem = cartItem => dispatch => {
 
 export const updateCartItem = cartItem => dispatch => {
     return CartItemApiUtil.updateCartItem(cartItem)
-        .then(cartItem => dispatch(updateCartItem(cartItem))
+        .then(cartItem => dispatch(receiveCartItem(cartItem))
     )
 };
 
